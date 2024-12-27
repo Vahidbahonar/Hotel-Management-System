@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Cookie&family=Poppins:wght@600&display=swap');
-
+@font-face {
+    font-family: BYekan;
+    src: url('BYekan/BYekan+.ttf');
+}
 :root {
     --bg-text-shadow: 0 2px 4px rgb(13 0 77 / 8%), 0 3px 6px rgb(13 0 77 / 8%), 0 8px 16px rgb(13 0 77 / 8%);
     --bg-box-shadow: 0px 0px 20px 6px rgb(0 0 0 / 34%);
@@ -8,7 +10,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: BYekan;
     /* text-shadow: var(--bg-text-shadow); */
 }
 
@@ -213,4 +215,8 @@ section {
     #Log_in .role_btn .btns{
         width: 90px;
     }
+}
+.right-0{
+    right: 0!important;
+    left: unset!important;
 }

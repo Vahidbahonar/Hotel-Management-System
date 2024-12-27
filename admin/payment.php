@@ -6,12 +6,12 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlueBird - Admin</title>
+    <title>پرنده آبی - ادمین</title>
     <!-- boot -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -36,20 +36,20 @@
         <table class="table table-bordered" id="table-data">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Room Type</th>
-                    <th scope="col">Bed Type</th>
-                    <th scope="col">Check In</th>
-                    <th scope="col">Check In</th>
-					<th scope="col">No of Day</th>
-                    <th scope="col">No of Room</th>
-					<th scope="col">Meal Type</th>
-                    <th scope="col">Room Rent</th>
-                    <th scope="col">Bed Rent</th>
-                    <th scope="col">Meals</th>
-					<th scope="col">Total Bill</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">ایدی</th>
+                    <th scope="col">نام</th>
+                    <th scope="col">نوع اتاق</th>
+                    <th scope="col">نوع تخت</th>
+                    <th scope="col">تاریخ ورود</th>
+                    <th scope="col">تاریخ خروج</th>
+					<th scope="col">تعداد روز ها</th>
+                    <th scope="col">تعداد تختها</th>
+					<th scope="col">وعده غذایی</th>
+                    <th scope="col">اجاره اتاق</th>
+                    <th scope="col">اجاره تخت</th>
+                    <th scope="col">وعده غذایی</th>
+					<th scope="col">صورت حساب کل</th>
+                    <th scope="col">عمل</th>
                     <!-- <th>Delete</th> -->
                 </tr>
             </thead>
@@ -73,8 +73,7 @@
 					<td><?php echo $res['mealtotal'] ?></td>
 					<td><?php echo $res['finaltotal'] ?></td>
                     <td class="action">
-                        <a href="invoiceprint.php?id= <?php echo $res['id']?>"><button class="btn btn-primary"><i class="fa-solid fa-print"></i>Print</button></a>
-						<a href="paymantdelete.php?id=<?php echo $res['id']?>"><button class="btn btn-danger">Delete</button></a>
+						<a href="paymantdelete.php?id=<?php echo $res['id']?>"><button class="btn btn-danger">حذف</button></a>
                     </td>
                 </tr>
             <?php

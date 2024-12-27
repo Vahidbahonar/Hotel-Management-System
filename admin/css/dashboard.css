@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Cookie&family=Poppins:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400&display=swap');
-
+@font-face {
+    font-family: BYekan;
+    src: url('../../css/BYekan/BYekan+.ttf');
+}
 :root {
     --bg-text-shadow: 0 2px 4px rgb(13 0 77 / 8%), 0 3px 6px rgb(13 0 77 / 8%), 0 8px 16px rgb(13 0 77 / 8%);
     --bg-box-shadow: 0px 0px 20px 6px rgba(26, 30, 164, 0.31);
@@ -22,14 +23,16 @@ body {
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: BYekan;
     /* text-shadow: var(--bg-text-shadow); */
 }
 
 .databox{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    gap: 50px;
+    justify-content: flex-start;
+    margin: 0 50px;
 }
 
 .databox .box{
@@ -45,7 +48,7 @@ body {
 }
 .databox .box h1{
     font-size: 80px;
-    font-family: 'Hind Siliguri', sans-serif;
+    font-family: BYekan;
     color: rgb(20, 20, 83);
 }
 .box:nth-child(1){
@@ -62,7 +65,9 @@ body {
 .chartbox{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    gap: 50px;
+    justify-content: flex-start;
+    margin: 0 50px;
 }
 
 .profitchart{

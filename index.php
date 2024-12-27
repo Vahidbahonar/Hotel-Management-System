@@ -1,12 +1,9 @@
 <?php
-
 include 'config.php';
 session_start();
-
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,18 +11,14 @@ session_start();
     <link rel="stylesheet" href="./css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- aos animation -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- loading bar -->
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <link rel="stylesheet" href="./css/flash.css">
-    <title>Hotel blue bird</title>
+    <title>هتل پرنده آبی</title>
 </head>
 
 <body>
-    <!--  carousel -->
     <section id="carouselExampleControls" class="carousel slide carousel_section" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -42,34 +35,26 @@ session_start();
             </div>
         </div>
     </section>
-
-    <!-- main section -->
     <section id="auth_section">
 
         <div class="logo">
             <img class="bluebirdlogo" src="./image/bluebirdlogo.png" alt="logo">
-            <p>BLUEBIRD</p>
+            <p>پرنده آبی</p>
         </div>
-
         <div class="auth_container">
-            <!--============ login =============-->
-
             <div id="Log_in">
-                <h2>Log In</h2>
+                <h2>ورود</h2>
                 <div class="role_btn">
-                    <div class="btns active">User</div>
-                    <div class="btns">Staff</div>
+                    <div class="btns active">کاربر</div>
+                    <div class="btns">اعضا</div>
                 </div>
-
-                <!-- // ==userlogin== -->
-                <?php 
+                <?php
                 if (isset($_POST['user_login_submit'])) {
                     $Email = $_POST['Email'];
                     $Password = $_POST['Password'];
 
                     $sql = "SELECT * FROM signup WHERE Email = '$Email' AND Password = BINARY'$Password'";
                     $result = mysqli_query($conn, $sql);
-
                     if ($result->num_rows > 0) {
                         $_SESSION['usermail']=$Email;
                         $Email = "";
@@ -87,25 +72,23 @@ session_start();
                 <form class="user_login authsection active" id="userlogin" action="" method="POST">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="Username" placeholder=" ">
-                        <label for="Username">Username</label>
+                        <label for="Username" class="right-0">نام کاربری</label>
                     </div>
                     <div class="form-floating">
                         <input typuser_logine="email" class="form-control" name="Email" placeholder=" ">
-                        <label for="Email">Email</label>
+                        <label for="Email" class="right-0">ایمیل</label>
                     </div>
                     <div class="form-floating">
                         <input type="password" class="form-control" name="Password" placeholder=" ">
-                        <label for="Password">Password</label>
+                        <label for="Password" class="right-0">رمز عبور</label>
                     </div>
-                    <button type="submit" name="user_login_submit" class="auth_btn">Log in</button>
+                    <button type="submit" name="user_login_submit" class="auth_btn">ورود</button>
 
                     <div class="footer_line">
-                        <h6>Don't have an account? <span class="page_move_btn" onclick="signuppage()">sign up</span></h6>
+                        <h6>حساب کاربری ندارید ؟ <span class="page_move_btn" onclick="signuppage()">عضویت</span></h6>
                     </div>
                 </form>
-                
-                <!-- == Emp Login == -->
-                <?php              
+                <?php
                     if (isset($_POST['Emp_login_submit'])) {
                         $Email = $_POST['Emp_Email'];
                         $Password = $_POST['Emp_Password'];
@@ -130,25 +113,21 @@ session_start();
                 <form class="employee_login authsection" id="employeelogin" action="" method="POST">
                     <div class="form-floating">
                         <input type="email" class="form-control" name="Emp_Email" placeholder=" ">
-                        <label for="floatingInput">Email</label>
+                        <label for="floatingInput" class="right-0">ایمیل</label>
                     </div>
                     <div class="form-floating">
                         <input type="password" class="form-control" name="Emp_Password" placeholder=" ">
-                        <label for="floatingPassword">Password</label>
+                        <label for="floatingPassword" class="right-0">رمز عبور</label>
                     </div>
-                    <button type="submit" name="Emp_login_submit" class="auth_btn">Log in</button>
+                    <button type="submit" name="Emp_login_submit" class="auth_btn">ورود</button>
                 </form>
-                
             </div>
-
-            <!--============ signup =============-->
-            <?php       
+            <?php
                 if (isset($_POST['user_signup_submit'])) {
                     $Username = $_POST['Username'];
                     $Email = $_POST['Email'];
                     $Password = $_POST['Password'];
                     $CPassword = $_POST['CPassword'];
-
                     if($Username == "" || $Email == "" || $Password == ""){
                         echo "<script>swal({
                             title: 'Fill the proper details',
@@ -198,42 +177,34 @@ session_start();
                 }
             ?>
             <div id="sign_up">
-                <h2>Sign Up</h2>
-
+                <h2>عضویت</h2>
                 <form class="user_signup" id="usersignup" action="" method="POST">
                     <div class="form-floating">
                         <input type="text" class="form-control" name="Username" placeholder=" ">
-                        <label for="Username">Username</label>
+                        <label for="Username">نام کاربری</label>
                     </div>
                     <div class="form-floating">
                         <input type="email" class="form-control" name="Email" placeholder=" ">
-                        <label for="Email">Email</label>
+                        <label for="Email">ایمیل</label>
                     </div>
                     <div class="form-floating">
                         <input type="password" class="form-control" name="Password" placeholder=" ">
-                        <label for="Password">Password</label>
+                        <label for="Password">رمز عبور</label>
                     </div>
                     <div class="form-floating">
                         <input type="password" class="form-control" name="CPassword" placeholder=" ">
-                        <label for="CPassword">Confirm Password</label>
+                        <label for="CPassword">تایید رمز عبور</label>
                     </div>
-
-                    <button type="submit" name="user_signup_submit" class="auth_btn">Sign up</button>
-
+                    <button type="submit" name="user_signup_submit" class="auth_btn">عضویت</button>
                     <div class="footer_line">
-                        <h6>Already have an account? <span class="page_move_btn" onclick="loginpage()">Log in</span></h6>
+                        <h6>آیا عضو هستید؟ <span class="page_move_btn" onclick="loginpage()">وارد شوید</span></h6>
                     </div>
                 </form>
             </div>
     </section>
 </body>
-
-
 <script src="./javascript/index.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-<!-- aos animation-->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();

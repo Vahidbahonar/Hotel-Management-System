@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Cookie&family=Poppins:wght@600&display=swap');
-
+@font-face {
+    font-family: BYekan;
+    src: url('../../css/BYekan/BYekan+.ttf');
+}
 :root {
     --bg-text-shadow: 0 2px 4px rgb(13 0 77 / 8%), 0 3px 6px rgb(13 0 77 / 8%), 0 8px 16px rgb(13 0 77 / 8%);
     --bg-box-shadow: 0px 0px 20px 6px rgb(0 0 0 / 34%);
@@ -8,8 +10,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    /* text-shadow: var(--bg-text-shadow); */
+    font-family: BYekan;
 }
 body {
     height: 100vh;
@@ -30,6 +31,9 @@ body {
 }
 .logo .bluebirdlogo {
     height: 100%;
+}
+.mainscreen{
+    margin-right: 18%;
 }
 .logo p {
     height: 100%;
@@ -72,10 +76,6 @@ ul li:hover{
 }
 ul li.active{
     background-color: #141dd498;
-}
-
-.mainscreen{
-    margin-left: 18%;
 }
 
 .frames{

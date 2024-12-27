@@ -5,7 +5,7 @@ include '../config.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@ include '../config.php';
     <!-- sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="./css/roombook.css">
-    <title>BlueBird - Admin</title>
+    <title>پرنده آبی - ادمین</title>
 </head>
 
 <body>
@@ -28,21 +28,21 @@ include '../config.php';
     <div id="guestdetailpanel">
         <form action="" method="POST" class="guestdetailpanelform">
             <div class="head">
-                <h3>RESERVATION</h3>
+                <h3>رزرو</h3>
                 <i class="fa-solid fa-circle-xmark" onclick="adduserclose()"></i>
             </div>
             <div class="middle">
                 <div class="guestinfo">
-                    <h4>Guest information</h4>
-                    <input type="text" name="Name" placeholder="Enter Full name" required>
-                    <input type="email" name="Email" placeholder="Enter Email" required>
+                    <h4>اطلاعات مهمان</h4>
+                    <input type="text" name="Name" placeholder="نام و نام خانوادگی" required>
+                    <input type="email" name="Email" placeholder="ایمیل" required>
 
                     <?php
                     $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao, People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia (Slovak Republic)", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbard and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
                     ?>
 
                     <select name="Country" class="selectinput" required>
-						<option value selected >Select your country</option>
+						<option value selected >انتخاب کشور</option>
                         <?php
 							foreach($countries as $key => $value):
 							echo '<option value="'.$value.'">'.$value.'</option>';
@@ -50,55 +50,55 @@ include '../config.php';
 							endforeach;
 						?>
                     </select>
-                    <input type="text" name="Phone" placeholder="Enter Phoneno" required>
+                    <input type="text" name="Phone" placeholder="شماره تماس" required>
                 </div>
 
                 <div class="line"></div>
 
                 <div class="reservationinfo">
-                    <h4>Reservation information</h4>
+                    <h4>اطلاعات رزرو</h4>
                     <select name="RoomType" class="selectinput">
-						<option value selected >Type Of Room</option>
-                        <option value="Superior Room">SUPERIOR ROOM</option>
-                        <option value="Deluxe Room">DELUXE ROOM</option>
-						<option value="Guest House">GUEST HOUSE</option>
-						<option value="Single Room">SINGLE ROOM</option>
+						<option value selected >نوع اتاق</option>
+                        <option value="اتاق vip">اتاق vip</option>
+                        <option value="اتاق مجلل">اتاق مجلل</option>
+						<option value="مسافر خانه">مسافر خانه</option>
+						<option value="تک اتاق">تک اتاق</option>
                     </select>
                     <select name="Bed" class="selectinput">
-						<option value selected >Bedding Type</option>
-                        <option value="Single">Single</option>
-                        <option value="Double">Double</option>
-						<option value="Triple">Triple</option>
-                        <option value="Quad">Quad</option>
-						<option value="None">None</option>
+						<option value selected >نوع تخت</option>
+                        <option value="تکی">تکی</option>
+                        <option value="دو نفره">دو نفره</option>
+						<option value="سه نفره">سه نفره</option>
+                        <option value="جهار نفره">جهار نفره</option>
                     </select>
-                    <select name="NoofRoom" class="selectinput">
-						<option value selected >No of Room</option>
-                        <option value="1">1</option>
-                        <!-- <option value="1">2</option>
-                        <option value="1">3</option> -->
-                    </select>
+                    <input type="hidden" name="NoofRoom" value="1" />
+<!--                    <select name="NoofRoom" class="selectinput">-->
+<!--						<option value selected >شماره اتاق</option>-->
+<!--                        <option value="1">1</option>-->
+<!--                        <option value="2">2</option>-->
+<!--                        <option value="3">3</option>-->
+<!--                    </select>-->
                     <select name="Meal" class="selectinput">
-						<option value selected >Meal</option>
-                        <option value="Room only">Room only</option>
-                        <option value="Breakfast">Breakfast</option>
-						<option value="Half Board">Half Board</option>
-						<option value="Full Board">Full Board</option>
+						<option value selected >وعده غذایی</option>
+                        <option value="فقط اتاق">فقط اتاق</option>
+                        <option value="صبحانه">صبحانه</option>
+						<option value="صبحانه و نهار">صبحانه و نهار</option>
+						<option value="صبحانه نهار شام">صبحانه نهار شام</option>
 					</select>
                     <div class="datesection">
                         <span>
-                            <label for="cin"> Check-In</label>
+                            <label for="cin"> تاریخ ورود</label>
                             <input name="cin" type ="date">
                         </span>
                         <span>
-                            <label for="cin"> Check-Out</label>
+                            <label for="cin">تاریخ خروج</label>
                             <input name="cout" type ="date">
                         </span>
                     </div>
                 </div>
             </div>
             <div class="footer">
-                <button class="btn btn-success" name="guestdetailsubmit">Submit</button>
+                <button class="btn btn-success" name="guestdetailsubmit">ذخیره</button>
             </div>
         </form>
 
@@ -117,19 +117,19 @@ include '../config.php';
         {
             $r = $r + 1;
             $s = $rrow['type'];
-            if($s=="Superior Room")
+            if($s=="اتاق vip")
             {
                 $sc = $sc+ 1;
             }
-            if($s=="Guest House")
+            if($s=="مسافر خانه")
             {
                 $gh = $gh + 1;
             }
-            if($s=="Single Room" )
+            if($s=="تک اتاق" )
             {
                 $sr = $sr + 1;
             }
-            if($s=="Deluxe Room" )
+            if($s=="اتاق مجلل" )
             {
                 $dr = $dr + 1;
             }
@@ -147,20 +147,20 @@ include '../config.php';
             $cr = $cr + 1;
             $cs = $crow['RoomType'];
                         
-            if($cs=="Superior Room")
+            if($cs=="اتاق vip")
             {
                 $csc = $csc + 1;
             }
                         
-            if($cs=="Guest House" )
+            if($cs=="مسافر خانه" )
             {
                 $cgh = $cgh + 1;
             }
-            if($cs=="Single Room")
+            if($cs=="تک اتاق")
             {
                 $csr = $csr + 1;
             }
-            if($cs=="Deluxe Room")
+            if($cs=="اتاق مجلل")
             {
                 $cdr = $cdr + 1;
             }
@@ -282,10 +282,7 @@ include '../config.php';
     <!-- ================================================= -->
     <div class="searchsection">
         <input type="text" name="search_bar" id="search_bar" placeholder="search..." onkeyup="searchFun()">
-        <button class="adduser" id="adduser" onclick="adduseropen()"><i class="fa-solid fa-bookmark"></i> Add</button>
-        <form action="./exportdata.php" method="post">
-            <button class="exportexcel" id="exportexcel" name="exportexcel" type="submit"><i class="fa-solid fa-file-arrow-down"></i></button>
-        </form>
+        <button class="adduser" id="adduser" onclick="adduseropen()"><i class="fa-solid fa-bookmark"></i> اضافه کردن</button>
     </div>
 
     <div class="roombooktable" class="table-responsive-xl">
@@ -297,20 +294,20 @@ include '../config.php';
         <table class="table table-bordered" id="table-data">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Type of Room</th>
-                    <th scope="col">Type of Bed</th>
-                    <th scope="col">No of Room</th>
-                    <th scope="col">Meal</th>
-                    <th scope="col">Check-In</th>
-                    <th scope="col">Check-Out</th>
-                    <th scope="col">No of Day</th>
-                    <th scope="col">Status</th>
-                    <th scope="col" class="action">Action</th>
+                    <th scope="col">ایدی</th>
+                    <th scope="col">نام</th>
+                    <th scope="col">ایمیل</th>
+                    <th scope="col">کشور</th>
+                    <th scope="col">شماره</th>
+                    <th scope="col">نوع اتاق</th>
+                    <th scope="col">نوع تخت</th>
+                    <th scope="col">شماره اتاق</th>
+                    <th scope="col">وعده غذایی</th>
+                    <th scope="col">ورود</th>
+                    <th scope="col">خروج</th>
+                    <th scope="col">تعداد روز ها</th>
+                    <th scope="col">وضعیت</th>
+                    <th scope="col" class="action">عملیات</th>
                     <!-- <th>Delete</th> -->
                 </tr>
             </thead>
@@ -341,11 +338,11 @@ include '../config.php';
                             }
                             else
                             {
-                                echo "<a href='roomconfirm.php?id=". $res['id'] ."'><button class='btn btn-success'>Confirm</button></a>";
+                                echo "<a href='roomconfirm.php?id=". $res['id'] ."'><button class='btn btn-success'>تایید</button></a>";
                             }
                         ?>
-                        <a href="roombookedit.php?id=<?php echo $res['id'] ?>"><button class="btn btn-primary">Edit</button></a>
-                        <a href="roombookdelete.php?id=<?php echo $res['id'] ?>"><button class='btn btn-danger'>Delete</button></a>
+                        <a href="roombookedit.php?id=<?php echo $res['id'] ?>"><button class="btn btn-primary">ویرایش</button></a>
+                        <a href="roombookdelete.php?id=<?php echo $res['id'] ?>"><button class='btn btn-danger'>حذف</button></a>
                     </td>
                 </tr>
             <?php
